@@ -49,3 +49,12 @@ And don't think you have to stop there. If you're having fun with this and have 
 you want and show us what you can do! 
 
 We are looking forward to see what you come up with!
+
+Comments:
+* Fixed the bug when you crash into an obstacle and press left key
+* Added a score
+* Added an ability to pause the game by pressing the space bar and resume with the down arrow key
+* Present the user with a message when the game is over with the score
+* Add ability to reset the game by presing either the enter key or the down arrow key
+* Added a feature that makes the game faster when the user reaches 500, 1000 and 2000 points
+

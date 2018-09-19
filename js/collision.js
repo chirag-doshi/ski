@@ -1,4 +1,5 @@
 'use strict';
+import { ctx } from './variables.js';
 import {skier} from './skier.js';
 import { loadedAssets } from './variables.js';
 import { obstacles } from './variables.js';
@@ -7,6 +8,7 @@ export class collision {
     constructor(skierObj, obstacleObj) {
         this.skierObj = skierObj;
         this.obstacleObj = obstacleObj;
+        this.collision == null;
     }
 
     checkIfSkierHitObstacle() {
@@ -45,4 +47,18 @@ export class collision {
             r2.top > r1.bottom ||
             r2.bottom < r1.top);
     };
+
+    crash () {
+        if(vars.skierDirection == 0) {
+            var skierAssetName = this.skierObj.getSkierAsset();
+            var skierImage = vars.loadedAssets[skierAssetName];
+            var x = (vars.gameWidth) / 3;
+            var y = (vars.gameHeight - (skierImage.height * 2)) / 2;
+            ctx.font = '24px serif';
+            ctx.fillStyle = 'red';
+            ctx.fillText('Game Over!', x, y);
+            ctx.fillText('Your Score: (' + vars.score+ ')', x, y + 25);
+            ctx.fillText('Press enter key to reset', x, y + 50);
+        }
+    }
 };

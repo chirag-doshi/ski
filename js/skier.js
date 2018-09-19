@@ -51,9 +51,9 @@ export class skier {
         case 5:
             skierAssetName = 'skierRight';
             break;
-        // case 6:
-        //     skierAssetName = skierAssetName;
-        //     break;
+        case 6:
+            skierAssetName = 'skierRight';
+            break;
         }
 
         return skierAssetName;
@@ -67,4 +67,26 @@ export class skier {
 
         ctx.drawImage(skierImage, x, y, skierImage.width, skierImage.height);
     };
+
+    skierPause () {
+        if(vars.skierDirection == 6) {
+            var skierAssetName = this.getSkierAsset();
+            var skierImage = vars.loadedAssets[skierAssetName];
+            var x = (vars.gameWidth) / 3;
+            var y = (vars.gameHeight - (skierImage.height * 2)) / 2;
+            ctx.font = '24px serif';
+            ctx.fillStyle = 'red';
+            ctx.fillText('Game Paused. Press down key to continue ...', x, y);
+        }
+    }
+
+    skierIncreaseSpeed () {
+        if(vars.score == 500) {
+            vars.skierSpeed ++;
+        } else if(vars.score == 1000) {
+            vars.skierSpeed += 2;
+        } else if(vars.score == 2000) {
+            vars.skierSpeed += 4;
+        }
+    }
 };

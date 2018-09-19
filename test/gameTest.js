@@ -1,8 +1,6 @@
-//var assert = require('assert');
-const assert = require('chai').assert;
-// const game = require('../bundle.js');
-const $ = require('jquery');
-// window.jQuery = $;
+var assert = require('chai').assert;
+// const game = require('../dist/bundle.js');
+
 var assetObject = {
     'skierCrash' : 'img/skier_crash.png',
     'skierLeft' : 'img/skier_left.png',
@@ -25,9 +23,8 @@ var assetObject = {
     'rhinoRunLeft' : 'img/rhino_run_left.png',
     'rhinoRunLeft2' : 'img/rhino_run_left_2.png'
 };
-
-describe('Game', function () {
-    it('Game assets should be equal to given assets', function () {
-        assert.equal(game.assets, assetObject);
+describe('bundle', function () {
+    it('app should return hello', function () {
+        asset.equal(assetsObj.assets = assetObject);
     });
 });
