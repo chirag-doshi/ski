@@ -1,25 +1,26 @@
-$(document).ready(function() {
-    var assets = {
-        'skierCrash' : 'img/skier_crash.png',
-        'skierLeft' : 'img/skier_left.png',
-        'skierLeftDown' : 'img/skier_left_down.png',
-        'skierDown' : 'img/skier_down.png',
-        'skierRightDown' : 'img/skier_right_down.png',
-        'skierRight' : 'img/skier_right.png',
-        'tree' : 'img/tree_1.png',
-        'treeCluster' : 'img/tree_cluster.png',
-        'rock1' : 'img/rock_1.png',
-        'rock2' : 'img/rock_2.png',
 
-        'rhino' : 'img/rhino_default.png',
-        'rhinoLift' : 'img/rhino_lift.png',
-        'rhinoLiftMouthOpen' : 'img/rhino_lift_mouth_open.png',
-        'rhinoEat1' : 'img/rhino_lift_eat_1.png',
-        'rhinoEat2' : 'img/rhino_lift_eat_2.png',
-        'rhinoEat3' : 'img/rhino_lift_eat_3.png',
-        'rhinoEat4' : 'img/rhino_lift_eat_4.png',
-        'rhinoRunLeft' : 'img/rhino_run_left.png',
-        'rhinoRunLeft2' : 'img/rhino_run_left_2.png'
+import { vars } from './variables.js';
+import { assets } from './variables.js';
+export class assetsClass {
+    loadAssets() {
+        var assetPromises = [];
+        var loadedAssetsData = vars.loadedAssets;
+
+        _.each(assets, function(asset, assetName) {
+            var assetImage = new Image();
+            var assetDeferred = new $.Deferred();
+
+            assetImage.onload = function() {
+                assetImage.width /= 2;
+                assetImage.height /= 2;
+                loadedAssetsData[assetName] = assetImage;
+                assetDeferred.resolve();
+            };
+            assetImage.src = asset;
+
+            assetPromises.push(assetDeferred.promise());
+        });
+
+        return $.when.apply($, assetPromises);
     };
-    var loadedAssets = {};
-});
+};
