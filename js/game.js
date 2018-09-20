@@ -14,6 +14,7 @@ import {collision} from './collision.js';
 import {skier} from './skier.js';
 import { asset } from './variables.js';
 import { setupKeyhandler } from './keyhandler.js';
+import {showInstructions} from './instructions';
 $(function() {
 
     var assetsObj = new assetsClass();
@@ -36,6 +37,7 @@ $(function() {
         skierObj.drawSkier();
         obstacleObj.drawObstacles();
         writeScore();
+        showInstructions();
         skierObj.skierPause()
         skierObj.skierIncreaseSpeed();
         collisionObj.crash();
