@@ -1,18 +1,14 @@
 'use strict';
-// import {variables} from './variables.js';
-
 import { ctx } from './variables.js';
 import { obstacleTypes } from './variables.js';
 import { obstacles } from './variables.js';
 import { assets } from './variables.js';
-import { loadedAssets } from './variables.js';
 import { vars } from './variables.js';
 import {writeScore} from './score.js';
 import {obstaclesClass} from './obstacles';
 import {assetsClass} from './assets.js';
 import {collision} from './collision.js';
 import {skier} from './skier.js';
-import { asset } from './variables.js';
 import { setupKeyhandler } from './keyhandler.js';
 import {showInstructions} from './instructions';
 $(function() {

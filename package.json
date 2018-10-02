@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "Ski game",
   "main": "web.js",
+  "module": "main.js",
   "scripts": {
     "start": "node web.js",
-    "test": "mocha || true",
+    "test": "mocha -r jsdom-global/register -r esm -r test/setup.js || true",
     "watch": "nodemon --watch directory-to-watch",
     "build": "webpack --config webpack.config.js"
   },
@@ -15,16 +16,22 @@
     "node": "8.4.0"
   },
   "dependencies": {
+    "esm": "^3.0.84",
     "http-server": "^0.10.0",
     "jquery": "^3.3.1",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
+    "canvas": "^1.6.12",
+    "canvas-mock": "0.0.0",
     "chai": "^4.1.2",
     "foreman": "^3.0.1",
+    "jsdom": "12.0.0",
+    "jsdom-global": "3.0.2",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.4",
-    "webpack": "^4.19.0",
+    "webpack": "^4.20.2",
     "webpack-cli": "^3.1.0"
   },
   "directories": {

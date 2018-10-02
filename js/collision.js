@@ -1,7 +1,6 @@
 'use strict';
 import { ctx } from './variables.js';
 import {skier} from './skier.js';
-import { loadedAssets } from './variables.js';
 import { obstacles } from './variables.js';
 import { vars } from './variables.js';
 export class collision {
@@ -12,6 +11,7 @@ export class collision {
     }
 
     checkIfSkierHitObstacle() {
+
         var skierAssetName = this.skierObj.getSkierAsset();
         var skierImage = vars.loadedAssets[skierAssetName];
         var skierRect = {

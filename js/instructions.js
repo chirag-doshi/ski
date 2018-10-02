@@ -1,4 +1,3 @@
-
 import { ctx } from './variables.js';
  export function showInstructions() {
     ctx.font = '20px serif';

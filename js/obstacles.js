@@ -108,8 +108,7 @@ export class obstaclesClass {
 
         if(foundCollision) {
             return this.calculateOpenPosition(minX, maxX, minY, maxY);
-        }
-        else {
+        } else {
             return {
                 x: x,
                 y: y
